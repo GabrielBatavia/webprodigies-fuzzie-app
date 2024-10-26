@@ -3,6 +3,8 @@ import Navbar from "@/components/global/navbar";
 import { div } from "framer-motion/client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button"
+import { clients} from '@/lib/constant'
+import { InfiniteMovingCards } from "@/components/global/infinite-moving-cards";
 
 export default function Home() {
   return <main>
@@ -25,8 +27,15 @@ export default function Home() {
                   Automate Your Work With Gbzzie
                 </h1>
           </div>
-        }></ContainerScroll>
+        }
+        />
       </div>
     </section>
+    <InfiniteMovingCards
+      className="md:mt-[18rem] mt-[-100px]"
+      items={clients}
+      direction="right"
+      speed="slow"
+    />
   </main>
 }
